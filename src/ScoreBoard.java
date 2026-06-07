@@ -1,3 +1,11 @@
+/**
+ * ScoreBoard - Zeigt den aktuellen Punktestand und Highscore an.
+ * Speichert den Highscore in einer Datei.
+ *
+ * @author Jurgen Sakti
+ * @version 1.0
+ */
+
 package src;
 
 import javax.swing.*;

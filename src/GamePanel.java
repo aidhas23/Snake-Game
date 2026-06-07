@@ -1,3 +1,10 @@
+/**
+ * GamePanel - Das Hauptspielfeld für Snake
+ * Zeichnet die Schlange, das Essen und verwaltet die Animation.
+ *
+ * @author Jurgen SaktiS
+ * @version 1.0
+ */
 package src;
 import javax.swing.*;
 import java.awt.*;

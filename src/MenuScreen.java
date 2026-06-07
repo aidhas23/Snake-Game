@@ -1,3 +1,11 @@
+/**
+ * MenuScreen - Das Startmenü des Snake Spiels.
+ * Enthält einen Play Button um das Spiel zu starten.
+ *
+ * @author Jurgen Sakti
+ * @version 1.0
+ */
+
 package src;
 
 import javax.swing.*;

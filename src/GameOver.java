@@ -1,3 +1,10 @@
+/**
+ * GameOver - Zeigt den Game Over Screen an.
+ * Enthält einen Neustart Button und die finale Punkteanzeige.
+ *
+ * @author Jurgen Sakti
+ * @version 1.0
+ */
 package src;
 
 import javax.swing.*;
