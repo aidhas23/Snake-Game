@@ -1,23 +1,36 @@
-package src;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 
+/**
+ * Punkteanzeige des Snake-Spiels.
+ * Zeigt den aktuellen Score und den Highscore.
+ * @author Jurgen Sakti
+ */
 public class ScoreBoard extends JPanel {
 
+    /** Aktueller Score. */
     private int currentScore = 0;
+
+    /** Highscore. */
     private int highScore = 0;
+
+    /** Dateiname für den Highscore. */
     private final String HIGH_SCORE_FILE = "highscore.txt";
 
-    // Konstruktor
+    /**
+     * Konstruktor - Initialisiert das ScoreBoard.
+     */
     public ScoreBoard() {
         this.setPreferredSize(new Dimension(600, 50));
         this.setBackground(Color.DARK_GRAY);
         loadHighScore();
     }
 
-    // Aktuellen Score setzen
+    /**
+     * Setzt den aktuellen Score.
+     * @param score Der neue Score
+     */
     public void setScore(int score) {
         currentScore = score;
         if (currentScore > highScore) {
@@ -27,13 +40,17 @@ public class ScoreBoard extends JPanel {
         repaint();
     }
 
-    // Score zurücksetzen
+    /**
+     * Setzt den Score zurück.
+     */
     public void resetScore() {
         currentScore = 0;
         repaint();
     }
 
-    // Highscore aus Datei laden
+    /**
+     * Lädt den Highscore aus einer Datei.
+     */
     private void loadHighScore() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(HIGH_SCORE_FILE));
@@ -44,7 +61,9 @@ public class ScoreBoard extends JPanel {
         }
     }
 
-    // Highscore in Datei speichern
+    /**
+     * Speichert den Highscore in eine Datei.
+     */
     private void saveHighScore() {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(HIGH_SCORE_FILE));
@@ -55,28 +74,29 @@ public class ScoreBoard extends JPanel {
         }
     }
 
-    // Score anzeigen
+    /**
+     * Gibt den aktuellen Score zurück.
+     * @return Aktueller Score
+     */
+    public int getScore() { return currentScore; }
+
+    /**
+     * Gibt den Highscore zurück.
+     * @return Highscore
+     */
+    public int getHighScore() { return highScore; }
+
+    /**
+     * Zeichnet das ScoreBoard.
+     * @param g Graphics Objekt
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-        // Aktueller Score
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.BOLD, 20));
         g.drawString("Score: " + currentScore, 20, 33);
-
-        // Highscore
         g.setColor(Color.YELLOW);
         g.drawString("Highscore: " + highScore, 400, 33);
-    }
-
-    // Score zurückgeben
-    public int getScore() {
-        return currentScore;
-    }
-
-    // Highscore zurückgeben
-    public int getHighScore() {
-        return highScore;
     }
 }
